@@ -1,0 +1,22 @@
+﻿  Project 1.cpp
+c:\users\phelpsa6\documents\projects\cpsc 231\project 1\project 1\project 1.cpp(16): error C2079: 'file' uses undefined class 'std::basic_fstream<char,std::char_traits<char>>'
+c:\users\phelpsa6\documents\projects\cpsc 231\project 1\project 1\project 1.cpp(18): error C2065: 'cout': undeclared identifier
+c:\users\phelpsa6\documents\projects\cpsc 231\project 1\project 1\project 1.cpp(19): error C2065: 'cin': undeclared identifier
+c:\users\phelpsa6\documents\projects\cpsc 231\project 1\project 1\project 1.cpp(21): error C2228: left of '.open' must have class/struct/union
+  c:\users\phelpsa6\documents\projects\cpsc 231\project 1\project 1\project 1.cpp(21): note: type is 'int'
+c:\users\phelpsa6\documents\projects\cpsc 231\project 1\project 1\project 1.cpp(22): error C2228: left of '.is_open' must have class/struct/union
+  c:\users\phelpsa6\documents\projects\cpsc 231\project 1\project 1\project 1.cpp(22): note: type is 'int'
+c:\users\phelpsa6\documents\projects\cpsc 231\project 1\project 1\project 1.cpp(26): error C2228: left of '.eof' must have class/struct/union
+  c:\users\phelpsa6\documents\projects\cpsc 231\project 1\project 1\project 1.cpp(26): note: type is 'int'
+c:\users\phelpsa6\documents\projects\cpsc 231\project 1\project 1\project 1.cpp(26): error C2228: left of '.good' must have class/struct/union
+  c:\users\phelpsa6\documents\projects\cpsc 231\project 1\project 1\project 1.cpp(26): note: type is 'int'
+c:\users\phelpsa6\documents\projects\cpsc 231\project 1\project 1\project 1.cpp(27): error C2664: 'bool Person::Get(std::istream &)': cannot convert argument 1 from 'int' to 'std::istream &'
+c:\users\phelpsa6\documents\projects\cpsc 231\project 1\project 1\project 1.cpp(29): error C2228: left of '.close' must have class/struct/union
+  c:\users\phelpsa6\documents\projects\cpsc 231\project 1\project 1\project 1.cpp(29): note: type is 'int'
+c:\users\phelpsa6\documents\projects\cpsc 231\project 1\project 1\project 1.cpp(31): error C3861: 'sort': identifier not found
+c:\users\phelpsa6\documents\projects\cpsc 231\project 1\project 1\project 1.cpp(33): error C2065: 'cout': undeclared identifier
+c:\users\phelpsa6\documents\projects\cpsc 231\project 1\project 1\project 1.cpp(34): error C2065: 'cout': undeclared identifier
+c:\users\phelpsa6\documents\projects\cpsc 231\project 1\project 1\project 1.cpp(37): error C2065: 'cout': undeclared identifier
+  Person.cpp
+c:\users\phelpsa6\documents\projects\cpsc 231\project 1\project 1\person.cpp(40): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+  Generating Code...
