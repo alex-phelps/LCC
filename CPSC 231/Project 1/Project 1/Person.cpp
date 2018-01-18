@@ -1,3 +1,5 @@
+#include "stdafx.h"
+
 #include <iostream>
 #include "Person.h"
 
@@ -15,12 +17,12 @@ bool Person::Get(istream &in)
 	in >> firstName;
 	in >> lastName;
 	in >> age;
-	return in.good;
+	return in.good();
 }
 
 void Person::Put(ostream &out)
 {
-	out << firstName << "\t" << lastName << "\t" << age;
+	out << firstName << "\t" << lastName << "\t" << age << endl;
 }
 
 bool operator > (const Person &a, const Person &b)

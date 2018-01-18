@@ -1,13 +1,16 @@
 // Project 1.cpp : Defines the entry point for the console application.
 //
 
+#include "stdafx.h"
+
 #include <iostream>
 #include <fstream>
 #include <algorithm>
-#include "stdafx.h"
 #include "Person.h"
 
 #define SIZE 20
+
+using namespace std;
 
 int main()
 {
@@ -19,12 +22,12 @@ int main()
 	cin >> fname;
 
 	file.open(fname, ios::in);
-	if (!file.is_open()) return 1;
 
-	for (int i = 0; i < SIZE; i++)
+	int i = 0;
+	while (!file.eof() || !file.good() || i < SIZE)
 	{
-		if (file.eof() || !file.good()) break;
-		people[i].Get(file);
+		if (!people[i].Get(file)) break;
+		i++;
 	}
 	file.close();
 
