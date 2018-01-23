@@ -5,14 +5,21 @@
 
 using namespace std;
 
-bool swap(int*, int*);
-
 int main()
 {
-	cout << sqrt(25) << endl;
+	int *arr = new int[10];
 
-	fstream file{};
-	file.
+	for (int i = 0; i < 10; i++)
+	{
+		arr[i] = i;
+	}
+
+	arr[4] = -1;
+
+	for (int i = 0; i < 10; i++)
+	{
+		cout << arr[i] << endl;
+	}
 
 	system("pause");
 	return 0;
