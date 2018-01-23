@@ -5,12 +5,13 @@
 
 #include <iostream>
 #include <fstream>
-#include <algorithm>
 #include "Person.h"
 
-#define SIZE 20
+#define SIZE 20 //arr size
 
 using namespace std;
+
+void sort(Person* people, int size);
 
 int main()
 {
@@ -21,6 +22,7 @@ int main()
 	cout << "File name: ";
 	cin >> fname;
 
+	//File input
 	file.open(fname, ios::in);
 
 	int i = 0;
@@ -30,16 +32,31 @@ int main()
 		i++;
 	}
 	file.close();
+	//
 
-	sort(people, people + SIZE);
+	//Sort
+	sort(people, SIZE);
 
+	//Display
 	cout << "Last          First     Age" << endl;
 	cout << "------------  --------  ---" << endl;
 	for (auto& person : people)
-	{
 		person.Put(cout);
-	}
 
-    return 0;
+	return 0;
 }
 
+//Sorts array of people - yay bubble sort
+void sort(Person* people, int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n - 1; j++)
+		{
+			if (people[j] > people[j + 1])
+			{
+				swap(people[j], people[j + 1]);
+			}
+		}
+	}
+}

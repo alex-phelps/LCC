@@ -1,10 +1,12 @@
 #include "stdafx.h"
 
 #include <iostream>
+#include <iomanip>
 #include "Person.h"
 
 using namespace std;
 
+//Constructor
 Person::Person()
 {
 	firstName = "";
@@ -12,6 +14,9 @@ Person::Person()
 	age = 0;
 }
 
+#pragma region IO
+
+//Input from stream
 bool Person::Get(istream &in)
 {
 	in >> firstName;
@@ -20,22 +25,37 @@ bool Person::Get(istream &in)
 	return in.good();
 }
 
+//Output to stream
 void Person::Put(ostream &out)
 {
-	out << firstName << "\t" << lastName << "\t" << age << endl;
+	if (firstName == "" || lastName == "" || age <= 0) return; //dont output if theres nothing to show
+
+	out << left;
+	out << setw(14) << lastName;
+	out << setw(10) << firstName;
+	out << age << endl;
 }
+#pragma endregion
+
+#pragma region Operator Overloads
+//sorts last -> first -> age
 
 bool operator > (const Person &a, const Person &b)
 {
-	return (a.lastName > b.lastName || b.firstName > b.firstName || a.age > b.age);
+	return (a.lastName > b.lastName || 
+			(a.lastName == b.lastName && (a.firstName > b.firstName || 
+			(a.firstName == b.firstName && a.age > b.age))));
 }
 
 bool operator < (const Person &a, const Person &b)
 {
-	return (a.lastName < b.lastName || b.firstName < b.firstName || a.age < b.age);
+	return (a.lastName < b.lastName ||
+		(a.lastName == b.lastName && (a.firstName < b.firstName ||
+		(a.firstName == b.firstName && a.age < b.age))));
 }
 
 bool operator == (const Person &a, const Person &b)
 {
-	return (a.lastName == b.lastName && b.firstName == b.firstName && a.age == b.age);
+	return (a.lastName == b.lastName && a.firstName == b.firstName && a.age == b.age);
 }
+#pragma endregion
