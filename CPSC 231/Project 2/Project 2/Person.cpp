@@ -23,12 +23,6 @@ Person::Person(string firstName, string lastName, int age)
 	this->age = age;
 }
 
-//valid if names are not blank strings and age > 0
-bool Person::valid()
-{
-	return (firstName != "" && lastName != "" && age > 0);
-}
-
 #pragma region IO
 
 //Input from stream

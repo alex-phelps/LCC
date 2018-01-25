@@ -4,52 +4,56 @@
 #include <stdexcept>
 #include "Family.h"
 
-Family::Family(int len)
+Family::Family()
 {
-	//Set array max length
-	this->len = len;
-
-	map = new Person[len];
+	//init  to 0
+	len = 0;
 }
 
 Family::~Family()
 {
-	delete[] map;
+	for (int i = 0; i < len; i++)
+		delete map[i];
 }
 
 //Returns count of valid people
 int Family::length()
 {
-	int count = 0;
-	for (int i = 0; i < len; i++)
-		if (map[i].valid()) count++; // only count valid entries
-
-	return count;
+	return len;
 }
 
 //Adds Person to array if there is room
 bool Family::insert(Person person)
 {
-	if (len != length()) // if there is room
-		for (int i = 0; i < len; i++)
-			if (!map[i].valid())
-			{
-				map[i] = person; // replace first invalid person
-				return true;
-			}
+	map[len] = new Person;
 
-	return false;
+	if (map[len] == NULL) return false;
+
+	*(map[len]) = person;
+
+	len++;
+	return true;
 }
 
 //Removes a Person
-bool Family::remove(Person person)
+bool Family::remove(string firstName, string lastName)
 {
-	int i = find(person);
+	int n = find(firstName, lastName);
 
-	if (i < 0)
+	if (n < 0 || n >= len)
 		return false;
 
-	map[i] = Person{}; // replace with blank / invalid person
+	//delete person we are removing
+	delete map[n];
+
+	//move pointers one space back
+	for (int i = n; i < len - 1; i++)
+	{
+		map[i] = map[i + 1];
+	}
+
+	len--;
+
 	return true;
 }
 
@@ -59,8 +63,7 @@ void Family::display(ostream &out)
 	out << "Last          First     Age" << endl;
 	out << "------------  --------  ---" << endl;
 	for (int i = 0; i < len; i++)
-		if (map[i].valid())
-			map[i].put(out);
+		map[i]->put(out);
 }
 
 //Sorts map
@@ -69,15 +72,15 @@ void Family::sort()
 	//Bubble sort
 	for (int i = 0; i < len; i++)
 		for (int j = 0; j < len - 1; j++)
-			if (map[j] > map[j + 1])
+			if (*(map[j]) > *(map[j + 1]))
 				swap(map[j], map[j + 1]);
 }
 
 //Finds person with given names in map and returns the index
-int Family::find(Person person)
+int Family::find(string firstName, string lastName)
 {
 	for (int i = 0; i < len; i++)
-		if (map[i] == person)
+		if (map[i]->firstName == firstName && map[i]->lastName == lastName)
 			return i;
 
 	return -1;
