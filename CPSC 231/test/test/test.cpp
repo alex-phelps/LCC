@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int main()
+int mainv()
 {
 	int *arr = new int[10];
 
