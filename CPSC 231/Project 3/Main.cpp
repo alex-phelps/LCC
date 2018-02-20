@@ -26,8 +26,8 @@ void main()
 // Get file name
 
   cout << "Enter file name: ";
-  //cin >> fname;
-  fname = "People.txt";
+  cin >> fname;
+  //fname = "People.txt";
 // Open file
 
   infile.open(fname,ios::in);
@@ -88,14 +88,14 @@ void main()
 
 // Extra credit
 
-//  extra(a);
+  extra(a);
 }
 
 /***********************************
  * Extra Credit
  * Test function - DO NOT CHANGE
  ***********************************/ 
-/*
+
 void extra(list &a)
 { int i,n;
   node_ptr map[4];
@@ -116,4 +116,4 @@ void extra(list &a)
   for(i=0;i<n;i++)
     map[i]->put(cout);
 }
-*/
+

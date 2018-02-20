@@ -29,8 +29,8 @@ void list::insert(string first, string last, int age)
 	else
 	{
 		node *q = head;
-		node *r;
-		while (q != NULL && *q > *p)
+		node *r = NULL;
+		while (q != NULL && *q < *p)
 		{
 			r = q;
 			q = q->next;
@@ -46,8 +46,26 @@ node* list::find(string first, string last)
 	node* p = head;
 	while (p != NULL)
 		if (p->first == first && p->last == last) return p;
+		else p = p->next;
 
 	return NULL;
+}
+
+int list::findall(string first, string last, node** map, int size)
+{
+	int i = 0;
+	node* p = head;
+	while (p != NULL && i < size)
+	{
+		if (p->first == first && p->last == last)
+		{
+			map[i] = p;
+			i++;
+		}
+		p = p->next;
+	}
+
+	return i;
 }
 
 bool list::remove(string first, string last)
@@ -88,6 +106,10 @@ int list::length()
 
 	node *p = head;
 	int count = 0;
-	while (p != NULL) count++;
+	while (p != NULL)
+	{
+		p = p->next;
+		count++;
+	}
 	return count;
 }

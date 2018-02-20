@@ -12,6 +12,7 @@ public:
 	~list();
 	void insert(string, string, int);
 	node* find(string, string);
+	int findall(string, string, node**, int);
 	bool remove(string, string);
 	void forwards(ostream &out);
 	void backwards(ostream &out);
