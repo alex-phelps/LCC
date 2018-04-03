@@ -10,6 +10,7 @@ tree::~tree()
 	delete root;
 }
 
+//Add new string to the tree; sort at input
 bool tree::insert(string data)
 {
 	if (root == NULL)
@@ -45,6 +46,7 @@ bool tree::insert(string data)
 	return false;
 }
 
+//Output in specific order
 void tree::show(string order, ostream &out)
 {
 	if (root == NULL) return; //nothing to show
@@ -53,6 +55,7 @@ void tree::show(string order, ostream &out)
 		root->LMR(out);
 }
 
+//Returns true if string is found in the tree
 bool tree::find(string data)
 {
 	node *p;
