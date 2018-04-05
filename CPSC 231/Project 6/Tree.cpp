@@ -14,40 +14,6 @@ tree::~tree()
 //Add new string to the tree; sort at input
 void tree::insert(string data)
 {
-	// OLD - Project 5 code
-	//if (root == NULL)
-	//{
-	//	root = new node(data);
-	//	return true;
-	//}
-
-	//node *p = root;
-
-	//while (p != NULL)
-	//{
-	//	if (data < p->data)
-	//	{
-	//		if (p->left == NULL)
-	//		{
-	//			p->left = new node(data);
-	//			return true;
-	//		}
-	//		else p = p->left;
-	//	}
-	//	else
-	//	{
-	//		if (p->right == NULL)
-	//		{
-	//			p->right = new node(data);
-	//			return true;
-	//		}
-	//		else p = p->right;
-	//	}
-	//}
-
-	//return false;
-
-
 	//NEW CODE
 	if (root == NULL)
 		root = new node(data);
@@ -85,9 +51,13 @@ bool tree::find(string data)
 //Removes a string from the tree; true is successful
 bool tree::remove(string data)
 {
-	if (remove(root, data) == NULL)
+	node *temp = remove(root, data);
+
+	if (temp == NULL) //Something is wrong
 		return false;
-	else return true;
+	
+	root = temp;
+	return true;
 }
 
 //Removes a node and returns new structure
@@ -98,12 +68,12 @@ node* tree::remove(node* base, string data)
 		return base;
 
 	if (data < base->data)
-		root->left = remove(base->left, data);
+		base->left = remove(base->left, data);
 	else if (data > base->data)
-		root->right = remove(base->right, data);
+		base->right = remove(base->right, data);
 	else
 	{
-		//Check if only one child (or none)
+		// Check if only one child (or none)
 		if (base->left == NULL)
 		{
 			node *temp = base->right;
@@ -119,9 +89,13 @@ node* tree::remove(node* base, string data)
 			return temp;
 		}
 
-		//Two children, add right tree to left tree (not that efficient though)
+		// Two children, add right tree to left tree 
 		node *temp = base->left;
 		temp->insert(base->right);
+
+		// Remove and remove the target node
+		base->left = NULL;
+		base->right = NULL;
 		delete base;
 		return temp;
 	}
