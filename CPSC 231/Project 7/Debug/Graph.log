@@ -1,0 +1,10 @@
+﻿  Node.cpp
+  Generating Code...
+  Compiling...
+  Graph.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Main.cpp
+Graph.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+  Graph.vcxproj -> C:\Users\phelpsa6\Documents\Projects\CPSC 231\Project 7\Debug\Graph.exe
+  Graph.vcxproj -> C:\Users\phelpsa6\Documents\Projects\CPSC 231\Project 7\Debug\Graph.pdb (Full PDB)
