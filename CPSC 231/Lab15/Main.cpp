@@ -16,7 +16,7 @@ void main()
 	int i, start, stop, pos, total, temp;
 	// Show cities
 	cout << "---City List---" << endl;
-	for(i=0;i<CITY_MAX;i++)
+	for(i = 0; i < CITY_MAX; i++)
 		cout << i << ") " << city[i] << endl;
 
 	cout << endl << endl;
@@ -30,8 +30,7 @@ void main()
 	pos = start;
 	while (pos != stop && pos < CITY_MAX)
 	{
-		for (temp = 0; temp < CITY_MAX; temp++) // Find first non 0
-			if (map[pos][temp] != 0) break;
+		for (temp = 0; temp < CITY_MAX && map[pos][temp] == 0; temp++); // Find first non 0
 
 		if (temp < CITY_MAX)
 		{
@@ -48,5 +47,6 @@ void main()
 
 	if (pos == stop)
 		cout << endl << "Total: " << total << endl;
-	else cout << "Could not get there!" << endl;
+	else 
+		cout << "Could not get there!" << endl;
 }

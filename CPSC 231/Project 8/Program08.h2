@@ -1,0 +1,7 @@
+// Your mouse position
+
+//#include "Program08.h"
+
+int row,col;
+
+cell copy[MAZE_ROWS][MAZE_COLS];
