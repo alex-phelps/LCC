@@ -1,0 +1,10 @@
+﻿  Main.cpp
+c:\users\phelpsa6\documents\projects\cpsc 231\lab16\main.cpp(25): warning C4018: '>': signed/unsigned mismatch
+c:\users\phelpsa6\documents\projects\cpsc 231\lab16\main.cpp(36): warning C4018: '<=': signed/unsigned mismatch
+c:\users\phelpsa6\documents\projects\cpsc 231\lab16\main.cpp(36): warning C4018: '>': signed/unsigned mismatch
+c:\users\phelpsa6\documents\projects\cpsc 231\lab16\main.cpp(51): warning C4018: '<=': signed/unsigned mismatch
+c:\users\phelpsa6\documents\projects\cpsc 231\lab16\main.cpp(51): warning C4018: '<': signed/unsigned mismatch
+c:\users\phelpsa6\documents\projects\cpsc 231\lab16\main.cpp(63): warning C4101: 'i': unreferenced local variable
+c:\users\phelpsa6\documents\projects\cpsc 231\lab16\main.cpp(82): warning C4101: 'i': unreferenced local variable
+  Lab16.vcxproj -> C:\Users\phelpsa6\Documents\Projects\CPSC 231\Lab16\Debug\Lab16.exe
+  Lab16.vcxproj -> C:\Users\phelpsa6\Documents\Projects\CPSC 231\Lab16\Debug\Lab16.pdb (Full PDB)

@@ -10,7 +10,7 @@
 
 // Cell types
 
-enum cell { CELL_OPEN, CELL_VISITED ,CELL_WALL,CELL_CHEESE,CELL_EXIT };
+enum cell { CELL_OPEN, CELL_VISITED ,CELL_WALL,CELL_CHEESE,CELL_EXIT }; // New cell type
 
 // Library Functions
 

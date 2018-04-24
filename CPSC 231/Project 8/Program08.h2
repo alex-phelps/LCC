@@ -4,4 +4,4 @@
 
 int row,col;
 
-cell copy[MAZE_ROWS][MAZE_COLS];
+bool copy[MAZE_ROWS][MAZE_COLS];
